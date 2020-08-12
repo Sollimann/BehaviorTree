@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorTreeLibrary", "BehaviorTree\BehaviorTreeLibrary.csproj", "{F3F5EC2F-A238-4DFA-856B-A11F962743BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorTreeTests", "BehaviorTreeTests\BehaviorTreeTests.csproj", "{18948C09-E8F6-4F53-AC1C-EAB041E7368F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorTreeLibrary.Tests", "BehaviorTreeLibrary.Tests\BehaviorTreeLibrary.Tests.csproj", "{5D81312E-37FC-43E1-B5A6-C5E4EEF9BCE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F3F5EC2F-A238-4DFA-856B-A11F962743BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F5EC2F-A238-4DFA-856B-A11F962743BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3F5EC2F-A238-4DFA-856B-A11F962743BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18948C09-E8F6-4F53-AC1C-EAB041E7368F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18948C09-E8F6-4F53-AC1C-EAB041E7368F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18948C09-E8F6-4F53-AC1C-EAB041E7368F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18948C09-E8F6-4F53-AC1C-EAB041E7368F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D81312E-37FC-43E1-B5A6-C5E4EEF9BCE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D81312E-37FC-43E1-B5A6-C5E4EEF9BCE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D81312E-37FC-43E1-B5A6-C5E4EEF9BCE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D81312E-37FC-43E1-B5A6-C5E4EEF9BCE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

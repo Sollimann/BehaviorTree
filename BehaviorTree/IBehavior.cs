@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BehaviorTreeLibrary
+{
+    public interface IBehavior
+    {
+        Status Tick();
+        Status Status { get; set; }
+        Action Initialize { set; }
+    }
+}
