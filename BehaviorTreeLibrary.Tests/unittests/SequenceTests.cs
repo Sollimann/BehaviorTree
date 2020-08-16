@@ -75,5 +75,47 @@ namespace BehaviorTreeLibrary.Tests.unittests
             // it has not been initialized
             Assert.AreEqual(0, sequence[1].InitializeCalled);
         }
+
+        [Test]
+        public void TickTwoSequentialChildrenSucceedReturnSuccess()
+        {
+            MockSequence sequence = new MockSequence(2);
+
+            // tick the sequence once, so that it gets out
+            // of the invalid state
+            sequence.Tick();
+
+            // checks that sequnce is now in running state
+            Assert.AreEqual(sequence.Status, Status.BhRunning);
+
+            // check that the first child is not yet terminated
+            Assert.AreEqual(0, sequence[0].TerminateCalled);
+
+            // set status of first child to failure
+            sequence[0].ReturnStatus = Status.BhSuccess;
+
+            // update tree
+            sequence.Tick();
+
+            // check that the sequence is still running
+            Assert.AreEqual(sequence.Status, Status.BhRunning);
+
+            // check that the first child has been terminated
+            Assert.AreEqual(1, sequence[0].TerminateCalled);
+            Assert.AreEqual(1, sequence[1].InitializeCalled);
+
+            // set our second child to successful
+            sequence[1].ReturnStatus = Status.BhSuccess;
+
+            sequence.Tick();
+
+            // sequence is still running, since first child is
+            // successful
+            Assert.AreEqual(sequence.Status, Status.BhSuccess);
+
+            // The second child should have terminated, since
+            // the first child has succeeded
+            Assert.AreEqual(1, sequence[1].TerminateCalled);
+        }
     }
 }
