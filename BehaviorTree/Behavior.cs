@@ -14,6 +14,8 @@ namespace BehaviorTreeLibrary
         public Status Status { get; set; }
         public Status Tick()
         {
+            // if status if invalid and the node has not been initialized before
+            // then initialize now.
             if(Status == Status.BhInvalid && Initialize != null)
             {
                 Initialize();
@@ -21,6 +23,10 @@ namespace BehaviorTreeLibrary
 
             Status = Update();
 
+            // if not yet terminate, and the node was set to either
+            // succeed, fail or invalid in the last tick, then proceed
+            // to terminate the node with the current status. Also return
+            // that status
             if(Status != Status.BhRunning && Terminate != null)
             {
                 Terminate(Status);
