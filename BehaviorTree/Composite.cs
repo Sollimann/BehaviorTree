@@ -26,5 +26,10 @@ namespace BehaviorTreeLibrary
         {
             get { return Children.Count; }
         }
+
+        public void Add(Composite composite)
+        {
+            Children.Add(composite);
+        }
     }
 }
