@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Internal;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using BehaviorTreeLibrary;
 
 
