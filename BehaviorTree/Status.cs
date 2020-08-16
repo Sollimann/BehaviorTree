@@ -6,9 +6,9 @@ namespace BehaviorTreeLibrary
 {
     public enum Status
     {
-        BhInvalid,
-        BhSuccess,
-        BhFailure,
-        BhRunning
+        BhInvalid, // 1
+        BhSuccess, // 2
+        BhFailure, // 3
+        BhRunning // 4
     }
 }
