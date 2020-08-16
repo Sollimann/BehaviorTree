@@ -25,5 +25,25 @@ namespace BehaviorTreeLibrary.Tests
                 Assert.AreEqual(1, selector[0].TerminateCalled);
             }
         }
+
+        [Test]
+        public void TickSelectorFirstChildFailsSecondChildRunsEndsWithSuccess()
+        {
+            // selector with two children
+            MockSelector selector = new MockSelector(2); 
+
+            selector.Tick();
+            Assert.AreEqual(selector.Status, Status.BhRunning);
+
+            // assert that our first child has not had its TerminateCalled
+            Assert.AreEqual(0, selector[0].TerminateCalled);
+
+            // set the first child to fail
+            selector[0].ReturnStatus = Status.BhFailure;
+            selector.Tick();
+            Assert.AreEqual(selector.Status, Status.BhRunning);
+            Assert.AreEqual(1, selector[0].TerminateCalled);
+            Assert.AreEqual(1, selector[1].InitializeCalled);
+        }
     }
 }
