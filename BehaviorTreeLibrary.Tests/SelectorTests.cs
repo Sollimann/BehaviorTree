@@ -20,7 +20,8 @@ namespace BehaviorTreeLibrary.Tests
                 Assert.AreEqual(0, selector[0].TerminateCalled);
 
                 selector[0].ReturnStatus = status[i];
-                Assert.AreEqual(selector.Status, status[1]);
+                selector.Tick();
+                Assert.AreEqual(selector.Status, status[i]);
                 Assert.AreEqual(1, selector[0].TerminateCalled);
             }
         }

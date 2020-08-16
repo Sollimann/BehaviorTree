@@ -7,11 +7,11 @@ namespace BehaviorTreeLibrary.Tests
 {
     public class MockSelector : Selector
     {
-        public MockBehavior(int size) : base()
+        public MockSelector(int size) : base()
         {
             for(int i = 0; i < size; i++)
             {
-                children.add(new MockBehavior());
+                Children.Add(new MockBehavior());
             }
         }
 
