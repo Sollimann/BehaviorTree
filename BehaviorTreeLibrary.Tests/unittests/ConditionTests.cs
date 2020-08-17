@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Internal;
-using BehaviorTreeLibrary;
+using BehaviorTreeLibrary.leaf;
 
 namespace BehaviorTreeLibrary.Tests.unittests
 {
@@ -10,20 +10,43 @@ namespace BehaviorTreeLibrary.Tests.unittests
         [Test]
         public void TickConditionTrueReturnsSuccess()
         {
-            /*
+
             int health = 10;
-            Condition condition = new Condition();
-            condition.canRun(() =>
+            Condition condition = new Condition
             {
-                if (health < 50)
+                CanRun = () =>
                 {
-                    return true;
+                    if (health < 50)
+                    {
+                        return true;
+                    }
+                    return false;
                 }
-                return false;
-            });
+            };
             condition.Tick();
             Assert.AreEqual(Status.BhSuccess, condition.Status);
-            */
+
+        }
+
+        [Test]
+        public void TickConditionFalseReturnsFailure()
+        {
+
+            int health = 60;
+            Condition condition = new Condition
+            {
+                CanRun = () =>
+                {
+                    if (health < 50)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            };
+            condition.Tick();
+            Assert.AreEqual(Status.BhFailure, condition.Status);
+
         }
     }
 }
