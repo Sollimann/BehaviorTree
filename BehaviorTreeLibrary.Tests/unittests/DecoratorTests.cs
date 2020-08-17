@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Internal;
-using BehaviorTreeLibrary;
 using BehaviorTreeLibrary.composite;
 using BehaviorTreeTests;
 
