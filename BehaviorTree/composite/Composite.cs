@@ -44,5 +44,17 @@ namespace BehaviorTreeLibrary
             Children.Add(t);
             return t;
         }
+
+        public override void Reset()
+        {
+            Status = Status.BhInvalid;
+
+            // since this is a composite, and it has children
+            // then we also have to reset the children
+            foreach(var behavior in Children)
+            {
+                behavior.Reset();
+            }
+        }
     }
 }
