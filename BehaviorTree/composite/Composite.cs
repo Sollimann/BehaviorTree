@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BehaviorTreeLibrary
 {
+
+    /* 
+     * All classes that inherit from composite will have children (internal node)
+     */
     public abstract class Composite : Behavior
     {
         protected List<IBehavior> Children { get; set; }
@@ -27,9 +32,17 @@ namespace BehaviorTreeLibrary
             get { return Children.Count; }
         }
 
+
         public void Add(Composite composite)
         {
             Children.Add(composite);
+        }
+
+        public T Add<T>() where T : class, IBehavior, new()
+        {
+            var t = new T { Parent = this };
+            Children.Add(t);
+            return t;
         }
     }
 }

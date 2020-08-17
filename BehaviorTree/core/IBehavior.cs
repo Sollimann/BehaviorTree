@@ -8,6 +8,7 @@ namespace BehaviorTreeLibrary
     {
         Status Tick();
         Status Status { get; set; }
+        IBehavior Parent { get; set; }
         Action Initialize { set; }
         Func<Status> Update { set; }
         Action<Status> Terminate { set; }
