@@ -2,7 +2,6 @@
 using NUnit.Framework.Internal;
 using BehaviorTreeLibrary;
 
-
 namespace BehaviorTreeTests
 {
     [TestFixture]
