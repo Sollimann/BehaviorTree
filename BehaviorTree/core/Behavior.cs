@@ -9,8 +9,8 @@ namespace BehaviorTreeLibrary
     public class Behavior : IBehavior
     {
         public Action Initialize { protected get; set; }
-        public Func<Status> Update { protected get; set; }
-        public Action<Status> Terminate { protected get; set; }
+        public Func<Status> Update { protected get; set; } // delegate for function with return type
+        public Action<Status> Terminate { protected get; set; } // delegate for void function
         public Status Status { get; set; }
         public Status Tick()
         {
