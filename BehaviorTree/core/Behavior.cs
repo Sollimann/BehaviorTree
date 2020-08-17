@@ -8,11 +8,14 @@ namespace BehaviorTreeLibrary
 {
     public class Behavior : IBehavior
     {
+        // attributes
         public Action Initialize { protected get; set; }
         public Func<Status> Update { protected get; set; } // delegate for function with return type
         public Action<Status> Terminate { protected get; set; } // delegate for void function
         public IBehavior Parent { get; set; }
         public Status Status { get; set; }
+
+        // functions
         public Status Tick()
         {
             // if status if invalid and the node has not been initialized before
@@ -35,5 +38,7 @@ namespace BehaviorTreeLibrary
 
             return Status;
         }
+
+        public virtual void Reset() {}
     }
 }

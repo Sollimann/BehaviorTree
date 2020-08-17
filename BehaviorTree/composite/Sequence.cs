@@ -41,5 +41,10 @@ namespace BehaviorTreeLibrary
 
             Initialize = () => { _sequence = 0; };
         }
+
+        public override void Reset()
+        {
+            Status = Status.BhInvalid;
+        }
     }
 }

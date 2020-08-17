@@ -6,7 +6,7 @@ namespace BehaviorTreeLibrary
 {
     public class Selector : Composite
     {
-        private int _selector;
+        protected int _selector;
         public Selector ()
         {
             Update = () =>
@@ -34,6 +34,11 @@ namespace BehaviorTreeLibrary
             {
                 _selector = 0;
             };
+        }
+
+        public override void Reset()
+        {
+            Status = Status.BhInvalid;
         }
     }
 }
